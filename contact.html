@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Accessibility Showcase</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/contact.js" defer></script>
+  </head>
+  <body>
+    <!-- Header with Banner Role -->
+    <header role="banner" class="header">
+      <div class="container">
+        <h1>Accessible Web Development</h1>
+        <p class="tagline">Building inclusive digital experiences</p>
+      </div>
+    </header>
+
+    <!-- Navigation with ARIA Label -->
+    <nav role="navigation" aria-label="Main menu" class="nav">
+      <div class="container1">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Accessibility Controls -->
+    <section class="accessibility-controls" aria-label="Accessibility options">
+      <div class="container">
+        <h2>Accessibility Options</h2>
+        <div class="controls-grid">
+          <button
+            id="textSizeBtn"
+            class="control-btn"
+            aria-label="Increase text size"
+          >
+            <span aria-hidden="true">🔍</span> Larger Text
+         
+          <button
+            id="darkModeBtn"
+            class="control-btn"
+            aria-label="Toggle dark mode"
+          >
+            <span aria-hidden="true">🌙</span> Dark Mode
+          </button>
+          <button
+            id="speakBtn"
+            class="control-btn"
+            aria-label="Read page content aloud"
+          >
+            <span aria-hidden="true">🔊</span> Read Aloud
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live region for screen reader announcements -->
+    <div id="liveRegion" class="sr-only" aria-live="polite"></div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main container1" tabindex="-1">
+      <section aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact Us</h2>
+        <p>
+          If you have any questions, feedback, or would like more information,
+          please fill out the form below.
+        </p>
+        <p style="font-weight: bolder; font-size: 20px">
+          For visually impaired people, we request you to press enter or tab to
+          hear the world inside each input feild.
+        </p>
+        <button type="button" id="toggleScreenReader" class="btn btn-secondary">
+          🔇 Disable Form Screen Reader
+        </button>
+
+        <!-- Live region for screen readers to announce errors/success -->
+        <div id="formError" class="sr-only" aria-live="assertive"></div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <!-- Text input -->
+          <div class="form-group">
+            <label for="name"
+              >Full Name <span aria-hidden="true">*</span></label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              aria-describedby="nameError"
+            />
+            <span
+              class="error-message"
+              id="nameError"
+              aria-live="polite"
+            ></span>
+          </div>
+
+          <!-- Email input -->
+          <div class="form-group">
+            <label for="email"
+              >Email Address <span aria-hidden="true">*</span></label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              aria-describedby="emailError"
+            />
+            <span
+              class="error-message"
+              id="emailError"
+              aria-live="polite"
+            ></span>
+          </div>
+
+          <!-- Date input -->
+          <div class="form-group">
+            <label for="meeting-date">Preferred Meeting Date</label>
+            <input type="date" id="meeting-date" name="meeting-date" />
+          </div>
+
+          <!-- Color input -->
+          <div class="form-group">
+            <label for="favcolor">Favorite Color</label>
+            <input type="color" id="favcolor" name="favcolor" value="#008000" />
+          </div>
+
+          <!-- Range input -->
+          <div class="form-group">
+            <label for="satisfaction">Satisfaction Level (1–10)</label>
+            <input
+              type="range"
+              id="satisfaction"
+              name="satisfaction"
+              min="1"
+              max="10"
+              value="5"
+              aria-describedby="satisfactionHelp"
+            />
+            <small id="satisfactionHelp"
+              >Move slider left or right to adjust your satisfaction
+              level.</small
+            >
+          </div>
+
+          <!-- Checkbox input -->
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="subscribe" name="subscribe" />
+            <label for="subscribe">Subscribe to our newsletter</label>
+          </div>
+
+          <!-- Message textarea -->
+          <div class="form-group">
+            <label for="message"
+              >Message <span aria-hidden="true">*</span></label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              aria-describedby="messageError"
+            ></textarea>
+            <span
+              class="error-message"
+              id="messageError"
+              aria-live="polite"
+            ></span>
+          </div>
+
+          <!-- Actions -->
+          <div class="form-actions">
+            <button type="button" id="formSpeakBtn" class="btn btn-secondary">
+              🔊 Read Form Aloud
+            </button>
+            <button type="button" id="formStopBtn" class="btn btn-secondary">
+              ⏹️ Stop Reading
+            </button>
+            <a
+              style="text-decoration: none"
+              href="brochure.pdf"
+              id="downloadLink"
+              class="btn btn-secondary"
+              download
+            >
+              📄 Download Brochure
+            </a>
+          </div>
+
+          <!-- Accessibility: Read form aloud -->
+          <div class="form-actions"></div>
+        </form>
+
+       
+      </section>
+
+
+
+     
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-content">
+        <div class="footer-section">
+          <h3>About</h3>
+          <p>
+            Our mission is to create digital experiences that everyone can use
+            and enjoy.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <address>
+            Email: <a href="mailto:info@example.com">info@example.com</a><br />
+            Phone: (123) 456-7890
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Accessibility Showcase. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Accessibility dialog -->
+    <dialog
+      id="accessibilityDialog"
+      class="dialog"
+      aria-labelledby="dialogTitle"
+    >
+      <div class="dialog-content">
+        <h2 id="dialogTitle">Accessibility Features</h2>
+        <ul>
+          <li>Use Alt+M to jump to main content</li>
+          <li>Use Alt+D to toggle dark mode</li>
+          <li>Use Alt+H to toggle high contrast mode</li>
+          <li>Use Alt+S to toggle text-to-speech</li>
+          <li>Use Alt+T to increase text size</li>
+          <li>Use Alt+I to show/hide shortcuts toolbar</li>
+        </ul>
+        <div class="dialog-actions">
+          <button id="learnMore" class="btn btn-primary">Learn More</button>
+          <button id="closeDialog" class="btn btn-secondary">Close</button>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

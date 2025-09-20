@@ -1,0 +1,204 @@
+/* ================================
+   About Page Styles
+================================ */
+
+/* Main container spacing */
+main {
+    padding: var(--spacing-2xl) var(--spacing-md);
+    background-color: var(--surface-color);
+  }
+  
+  /* About sections */
+  main section {
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background-color: var(--background-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  main section:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Section headings */
+  main h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+    border-left: 5px solid var(--accent-color);
+    padding-left: var(--spacing-sm);
+  }
+  
+  /* Paragraphs */
+  main p {
+    font-size: var(--font-size-lg);
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
+  }
+  
+
+.accessibility-highlight {
+    background-color: var(--background-color); /* same as page background */
+    color: var(--text-color);
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    border: 1px solid var(--border-color); /* same thin border used sitewide */
+    border-radius: var(--radius-sm); /* same as buttons/inputs */
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+  /* about.css */
+
+/* Accessibility Dialog */
+.dialog {
+    background-color: var(--surface-color); /* match section cards or panels */
+    color: var(--text-color);              /* match site text color */
+    font-family: var(--font-family, Arial, sans-serif); /* inherit global font */
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    max-width: 600px;
+    width: 90%;
+    box-shadow: var(--shadow); /* same shadow as cards */
+  }
+  
+  /* Inside the dialog */
+  .dialog-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--accent-color); /* highlight headings */
+  }
+  
+  .dialog-content p {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+  
+  .dialog-content ul {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+    list-style: disc;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+  }
+  
+  
+  
+  /* Styled lists */
+  main ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  main ul li {
+    padding: var(--spacing-sm) 0 var(--spacing-sm) 2rem;
+    background: url("check-icon.svg") no-repeat left center;
+    background-size: 18px;
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+  }
+  
+  /* Tables */
+  main table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  main thead {
+    background-color: var(--primary-color);
+    color: #ffffff;
+  }
+  
+  main th,
+  main td {
+    padding: var(--spacing-md);
+    text-align: left;
+  }
+  
+  main tbody tr:nth-child(even) {
+    background-color: var(--surface-color);
+  }
+  
+  main tbody tr:hover {
+    background-color: var(--background-color);
+    transition: background 0.3s ease;
+  }
+  kbd {
+    background: var(--text-color);
+    color: #0b0101;
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-family: monospace;
+    margin: 0 0.2rem;
+  }
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    main section {
+      padding: var(--spacing-lg);
+    }
+  
+    main h2 {
+      font-size: var(--font-size-xl);
+    }
+  
+    main p {
+      font-size: var(--font-size-base);
+    }
+  
+    main table {
+      font-size: var(--font-size-sm);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    main {
+      padding: var(--spacing-lg) var(--spacing-sm);
+    }
+  
+    main section {
+      padding: var(--spacing-md);
+    }
+  }
+/* Skip link styled as a button */
+
+.btn-primary[href="#main-content"] {
+    display: inline-block;
+    margin: 1rem;
+  }
+  .team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap; /* allows wrapping on small screens */
+  }
+  
+  .team-grid article {
+    text-align: center;
+    max-width: 220px;
+  }
+  
+  .team-grid img {
+    width: 200px;         /* fixed width */
+    height: 200px;        /* fixed height */
+    object-fit: cover;    /* crop without distortion */
+    border-radius: 50%;   /* makes images circular */
+    box-shadow: var(--shadow); /* matches the rest of the site */
+    margin-bottom: 1rem;
+  }
+  
