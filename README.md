@@ -106,7 +106,8 @@ The website consists of three main pages:
 ---
 
 ## Credits
-- Developed by: Maryyam, Fatima, Minahil 
+- Developed by:
+  **Maryyam Tanveer (BCSF23M007) , Fatima Mirza (BCSF23M031) , Minahil Shahid (BCSF23M012)**
 - Accessibility Guidelines: [WCAG 2.1](https://www.w3.org/WAI/WCAG21/quickref/)  
 - References: [WebAIM](https://webaim.org/), [Section 508 Guidelines](https://www.section508.gov/)  
 
